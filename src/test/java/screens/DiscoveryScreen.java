@@ -50,7 +50,7 @@ public class DiscoveryScreen {
         skipButton.shouldBe(visible).shouldHave(text("Skip"));
     }
 
-    @Step("Continue to next onboarding screen")
+    @Step("Continue to bookmarks onboarding screen")
     public BookmarksScreen continueToBookmarksScreen() {
         continueButton.click();
         return new BookmarksScreen();

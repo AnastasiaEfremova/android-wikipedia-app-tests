@@ -33,7 +33,7 @@ public class BookmarksScreen {
         skipOption.shouldBe(visible);
     }
 
-    @Step("Proceed to next step")
+    @Step("Continue to privacy screen")
     public PrivacyScreen proceedToNextStep() {
         nextStepButton.click();
         return new PrivacyScreen();
