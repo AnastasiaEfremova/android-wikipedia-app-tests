@@ -18,6 +18,7 @@ class PrivacyScreenTests extends TestBase {
     private PrivacyScreen privacyScreen;
 
     @BeforeEach
+    @Step("Navigate to privacy screen")
     void navigateToPrivacyScreen() {
         privacyScreen = new WelcomeScreen()
                 .continueToDiscoveryScreen()

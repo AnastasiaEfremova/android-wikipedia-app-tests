@@ -19,6 +19,7 @@ class DiscoveryScreenTests extends TestBase {
     private DiscoveryScreen discoveryScreen;
 
     @BeforeEach
+    @Step("Navigate to discovery screen")
     void navigateToDiscoveryScreen() {
         discoveryScreen = new WelcomeScreen()
                 .continueToDiscoveryScreen();

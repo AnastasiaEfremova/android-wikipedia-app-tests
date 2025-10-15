@@ -18,6 +18,7 @@ class BookmarksScreenTests extends TestBase {
     private BookmarksScreen bookmarksScreen;
 
     @BeforeEach
+    @Step("Navigate to bookmarks screen")
     void navigateToBookmarksScreen() {
         bookmarksScreen = new WelcomeScreen()
                 .continueToDiscoveryScreen()
