@@ -1,6 +1,6 @@
 {
   "base": {
-    "project": "android-wikipedia-test",
+    "project": "android-wikipedia-tests",
     "environment": "qa.guru",
     "comment": "comment here @efremova_anastasiaa",
     "reportLink": "",
