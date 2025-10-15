@@ -1,12 +1,10 @@
 package tests.onboardingTests;
 
 import io.qameta.allure.*;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import screens.DiscoveryScreen;
-import screens.WelcomeScreen;
+import screens.*;
 import tests.TestBase;
 
 @Feature("Onboarding Flow")
@@ -16,19 +14,13 @@ import tests.TestBase;
 @Tag("regression")
 class DiscoveryScreenTests extends TestBase {
 
-    private DiscoveryScreen discoveryScreen;
-
-    @BeforeEach
-    @Step("Navigate to discovery screen")
-    void navigateToDiscoveryScreen() {
-        discoveryScreen = new WelcomeScreen()
-                .continueToDiscoveryScreen();
-    }
-
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Verify discovery screen elements")
     void verifyDiscoveryScreenElementsTest() {
+        DiscoveryScreen discoveryScreen = new WelcomeScreen()
+                .continueToDiscoveryScreen();
+
         discoveryScreen
                 .verifyDiscoveryScreenLoaded()
                 .verifyDiscoveryImage()
@@ -41,6 +33,9 @@ class DiscoveryScreenTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Skip onboarding from discovery screen")
     void skipFromDiscoveryScreenShowsMainScreenTest() {
+        DiscoveryScreen discoveryScreen = new WelcomeScreen()
+                .continueToDiscoveryScreen();
+
         discoveryScreen
                 .skipOnboarding()
                 .verifyMainScreenLoaded();
@@ -50,6 +45,9 @@ class DiscoveryScreenTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Continue from discovery to bookmarks screen")
     void continueFromDiscoveryToBookmarksScreenTest() {
+        DiscoveryScreen discoveryScreen = new WelcomeScreen()
+                .continueToDiscoveryScreen();
+
         discoveryScreen
                 .continueToBookmarksScreen()
                 .verifyBookmarksScreenLoaded();

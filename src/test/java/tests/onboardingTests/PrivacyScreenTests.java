@@ -1,7 +1,6 @@
 package tests.onboardingTests;
 
 import io.qameta.allure.*;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -15,21 +14,15 @@ import tests.TestBase;
 @Tag("regression")
 class PrivacyScreenTests extends TestBase {
 
-    private PrivacyScreen privacyScreen;
-
-    @BeforeEach
-    @Step("Navigate to privacy screen")
-    void navigateToPrivacyScreen() {
-        privacyScreen = new WelcomeScreen()
-                .continueToDiscoveryScreen()
-                .continueToBookmarksScreen()
-                .proceedToNextStep();
-    }
-
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Verify privacy screen elements")
     void verifyPrivacyScreenElementsTest() {
+        PrivacyScreen privacyScreen = new WelcomeScreen()
+                .continueToDiscoveryScreen()
+                .continueToBookmarksScreen()
+                .proceedToNextStep();
+
         privacyScreen
                 .verifyPrivacyScreenLoaded()
                 .verifyPrivacyTitle()
@@ -40,6 +33,11 @@ class PrivacyScreenTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Complete onboarding flow")
     void completeOnboardingShowsMainScreenTest() {
+        PrivacyScreen privacyScreen = new WelcomeScreen()
+                .continueToDiscoveryScreen()
+                .continueToBookmarksScreen()
+                .proceedToNextStep();
+
         privacyScreen
                 .completeOnboarding()
                 .verifyMainScreenLoaded();

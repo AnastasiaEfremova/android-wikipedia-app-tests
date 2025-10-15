@@ -1,7 +1,6 @@
 package tests.onboardingTests;
 
 import io.qameta.allure.*;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -15,20 +14,14 @@ import tests.TestBase;
 @Tag("regression")
 class BookmarksScreenTests extends TestBase {
 
-    private BookmarksScreen bookmarksScreen;
-
-    @BeforeEach
-    @Step("Navigate to bookmarks screen")
-    void navigateToBookmarksScreen() {
-        bookmarksScreen = new WelcomeScreen()
-                .continueToDiscoveryScreen()
-                .continueToBookmarksScreen();
-    }
-
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Verify bookmarks screen elements")
     void verifyBookmarksScreenElementsTest() {
+        BookmarksScreen bookmarksScreen = new WelcomeScreen()
+                .continueToDiscoveryScreen()
+                .continueToBookmarksScreen();
+
         bookmarksScreen
                 .verifyBookmarksScreenLoaded()
                 .verifyPrimaryTitle()
@@ -39,6 +32,10 @@ class BookmarksScreenTests extends TestBase {
     @DisplayName("Skip onboarding from bookmarks screen")
     @Severity(SeverityLevel.NORMAL)
     void skipFromBookmarksScreenShowsMainScreenTest() {
+        BookmarksScreen bookmarksScreen = new WelcomeScreen()
+                .continueToDiscoveryScreen()
+                .continueToBookmarksScreen();
+
         bookmarksScreen
                 .skipOnboarding()
                 .verifyMainScreenLoaded();
@@ -48,6 +45,10 @@ class BookmarksScreenTests extends TestBase {
     @DisplayName("Continue from bookmarks to privacy screen")
     @Severity(SeverityLevel.BLOCKER)
     void continueFromBookmarksToPrivacyScreenTest() {
+        BookmarksScreen bookmarksScreen = new WelcomeScreen()
+                .continueToDiscoveryScreen()
+                .continueToBookmarksScreen();
+
         bookmarksScreen
                 .proceedToNextStep()
                 .verifyPrivacyScreenLoaded();
