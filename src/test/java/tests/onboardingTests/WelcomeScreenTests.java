@@ -11,6 +11,7 @@ import tests.TestBase;
 @Owner("efremovaa")
 @Story("Welcome screen functionality")
 @Tag("welcome")
+@Tag("regression")
 class WelcomeScreenTests extends TestBase {
 
     WelcomeScreen welcomeScreen = new WelcomeScreen();

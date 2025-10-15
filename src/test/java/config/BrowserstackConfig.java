@@ -4,16 +4,20 @@ import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:main.properties"
+    "system:properties",
+    "system:env",
+    "classpath:browserstack.properties"
 })
-public interface MainConfig extends Config {
+public interface BrowserstackConfig extends Config {
 
+    // Обязательные через командную строку
     @Key("userName")
     String userName();
 
     @Key("accessKey")
     String accessKey();
 
+    // Из browserstack.properties
     @Key("device")
     String device();
 
@@ -25,6 +29,4 @@ public interface MainConfig extends Config {
 
     @Key("appUrl")
     String appUrl();
-
-
 }

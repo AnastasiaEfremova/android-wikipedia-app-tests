@@ -13,6 +13,7 @@ import tests.TestBase;
 @Owner("efremovaa")
 @Story("Language selection screen functionality")
 @Tag("languages")
+@Tag("regression")
 class LanguageSettingsScreenTests extends TestBase {
 
     WelcomeScreen welcomeScreen = new WelcomeScreen();

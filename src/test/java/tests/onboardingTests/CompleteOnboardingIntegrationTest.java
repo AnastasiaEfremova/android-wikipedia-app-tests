@@ -10,7 +10,7 @@ import tests.TestBase;
 @Feature("Onboarding Flow")
 @Owner("efremovaa")
 @Story("Complete onboarding journey")
-@Tag("integration")
+@Tag("smoke")
 class CompleteOnboardingIntegrationTest extends TestBase {
 
     @Test

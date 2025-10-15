@@ -12,6 +12,7 @@ import tests.TestBase;
 @Owner("efremovaa")
 @Story("Bookmarks screen functionality")
 @Tag("bookmarks")
+@Tag("regression")
 class BookmarksScreenTests extends TestBase {
 
     private BookmarksScreen bookmarksScreen;

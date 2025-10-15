@@ -16,6 +16,8 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
+    // gradle clean test -DdeviceHost=browserstack -DuserName=anastasia_q1ja9U -DaccessKey=DxF1BYA6tMsKCMobQ7pa
+    // gradle clean test -DdeviceHost=emulator
 
     private static final String DEVICE_HOST = System.getProperty("deviceHost", "emulator");
 

@@ -43,11 +43,60 @@ dependencies {
 
 tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperty "console.encoding", "UTF-8"
     systemProperties(System.getProperties())
+
     testLogging {
-        lifecycle {
-            events "started", "skipped", "failed", "standard_error", "standard_out"
-            exceptionFormat "short"
-        }
+        events "started", "skipped", "failed", "standard_error", "standard_out"
+        exceptionFormat "short"
+        showStandardStreams = true
+    }
+}
+
+task smoke_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("smoke")
+    }
+}
+
+task regression_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("regression")
+    }
+}
+
+task welcome_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("welcome")
+    }
+}
+
+task discovery_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("discovery")
+    }
+}
+
+task bookmarks_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("bookmarks")
+    }
+}
+
+task privacy_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("privacy")
+    }
+}
+
+task language_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("languages")
+    }
+}
+
+task integration_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("integration")
     }
 }

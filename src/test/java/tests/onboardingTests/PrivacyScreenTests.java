@@ -12,6 +12,7 @@ import tests.TestBase;
 @Owner("efremovaa")
 @Story("Privacy screen functionality")
 @Tag("privacy")
+@Tag("regression")
 class PrivacyScreenTests extends TestBase {
 
     private PrivacyScreen privacyScreen;

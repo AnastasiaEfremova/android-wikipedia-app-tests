@@ -2,10 +2,13 @@ package config;
 
 import org.aeonbits.owner.Config;
 
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:main.properties"
+    "system:properties",
+    "system:env", 
+    "classpath:local.properties"
 })
-public interface AppConfig extends Config {
+public interface LocalConfig extends Config {
 
     @Key("remote.url")
     String remoteUrl();

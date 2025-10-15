@@ -13,6 +13,7 @@ import tests.TestBase;
 @Owner("efremovaa")
 @Story("Discovery screen functionality")
 @Tag("discovery")
+@Tag("regression")
 class DiscoveryScreenTests extends TestBase {
 
     private DiscoveryScreen discoveryScreen;
