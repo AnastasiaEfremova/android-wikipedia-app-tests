@@ -1,0 +1,13 @@
+build/
+!**/src/main/**
+!**/src/test/**
+!build.gradle
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### Gradle ###
+.gradle
