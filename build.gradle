@@ -94,9 +94,3 @@ task language_tests(type: Test) {
         includeTags("languages")
     }
 }
-
-task integration_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags("integration")
-    }
-}
